@@ -20,7 +20,7 @@ class MyThemeData {
     textTheme: TextTheme(
         bodyMedium: GoogleFonts.elMessiri(
             fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black),
-        bodySmall: GoogleFonts.elMessiri(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black)),
+        bodySmall: GoogleFonts.elMessiri(fontSize: 20,fontWeight: FontWeight.bold,color: lightColor)),
 
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: lightColor,

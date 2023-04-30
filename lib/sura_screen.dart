@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/suraDeatils.dart';
 
 class SuraScreen extends StatefulWidget {
@@ -33,20 +34,30 @@ class _SuraScreenState extends State<SuraScreen> {
           appBar: AppBar(
             title: Text(
               args.suraName,
-              style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(fontWeight: FontWeight.bold),
             ),
           ),
           body: verses.isEmpty
-              ? Center(child: CircularProgressIndicator(color: Theme.of(context).primaryColor,))
+              ? Center(
+                  child: CircularProgressIndicator(
+                  color: Theme.of(context).primaryColor,
+                ))
               : ListView.builder(
                   itemBuilder: (context, index) {
-                    return Center(
-                      child: Text(
-                        verses[index],
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.bodySmall,
+                    return RichText(
+                      textDirection: TextDirection.rtl,
+                      textAlign: verses.length<20?TextAlign.center:TextAlign.justify,
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                              text: verses[index],
+                              style: Theme.of(context).textTheme.bodySmall),
+                          TextSpan(text: '\u06dd${index + 1}',style: GoogleFonts.amiri(color: Theme.of(context).primaryColor,fontSize: 25))
+                        ],
                       ),
-
                     );
                   },
                   itemCount: verses.length,
