@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyThemeData {
   static const Color lightColor = Color(0xFFB7935F);
@@ -14,11 +15,13 @@ class MyThemeData {
       centerTitle: true,
       iconTheme: IconThemeData(color: lightColor),
     ),
+
+
     textTheme: TextTheme(
-        bodyMedium: TextStyle(
-            fontSize: 25, fontWeight: FontWeight.w500, color: lightColor),
-        bodySmall: TextStyle(
-            fontSize: 20, fontWeight: FontWeight.w500, color: lightColor)),
+        bodyMedium: GoogleFonts.elMessiri(
+            fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black),
+        bodySmall: GoogleFonts.elMessiri(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black)),
+
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: lightColor,
         type: BottomNavigationBarType.fixed,
@@ -26,21 +29,25 @@ class MyThemeData {
         selectedLabelStyle: TextStyle(color: Colors.black),
         unselectedItemColor: Colors.white,
         unselectedLabelStyle: TextStyle(color: Colors.white)),
+
+
     buttonTheme:
         ButtonThemeData(buttonColor: lightColor, highlightColor: lightColor),
     elevatedButtonTheme: ElevatedButtonThemeData(
+
       style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(lightColor),
-          // shape: MaterialStateProperty.all(
-          //   RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          // ),
+
+
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          fixedSize: MaterialStatePropertyAll(Size(10,20)),
+
+          fixedSize: MaterialStatePropertyAll(Size(10, 20)),
           padding: MaterialStateProperty.all(EdgeInsets.zero)),
+
     ),
   );
 
