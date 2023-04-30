@@ -49,7 +49,7 @@ class _SuraScreenState extends State<SuraScreen> {
                   itemBuilder: (context, index) {
                     return RichText(
                       textDirection: TextDirection.rtl,
-                      textAlign: verses.length<20?TextAlign.center:TextAlign.justify,
+                      textAlign: verses.length<=20?TextAlign.center:TextAlign.justify,
                       text: TextSpan(
                         children: [
                           TextSpan(
