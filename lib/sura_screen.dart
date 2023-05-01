@@ -49,13 +49,19 @@ class _SuraScreenState extends State<SuraScreen> {
                   itemBuilder: (context, index) {
                     return RichText(
                       textDirection: TextDirection.rtl,
-                      textAlign: verses.length<=20?TextAlign.center:TextAlign.justify,
+                      textAlign: verses.length <= 20
+                          ? TextAlign.center
+                          : TextAlign.justify,
                       text: TextSpan(
                         children: [
                           TextSpan(
                               text: verses[index],
                               style: Theme.of(context).textTheme.bodySmall),
-                          TextSpan(text: '\u06dd${index + 1}',style: GoogleFonts.amiri(color: Theme.of(context).primaryColor,fontSize: 25))
+                          TextSpan(
+                              text: '\u06dd${index + 1}',
+                              style: GoogleFonts.amiri(
+                                  color: Theme.of(context).primaryColor,
+                                  fontSize: 25))
                         ],
                       ),
                     );
@@ -69,7 +75,8 @@ class _SuraScreenState extends State<SuraScreen> {
   }
 
   void loadFile(int index) async {
-    String sura = await rootBundle.loadString("assets/files/${index + 1}.txt");
+    String sura =
+        await rootBundle.loadString("assets/files/quran/${index + 1}.txt");
     List<String> lines = sura.split("\n");
     verses = lines;
     setState(() {});
