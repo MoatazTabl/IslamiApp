@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/ahadethModel.dart';
 
 class AhadethTab extends StatefulWidget {
@@ -14,26 +15,46 @@ class _AhadethTabState extends State<AhadethTab> {
   Widget build(BuildContext context) {
     if (allAhadeth.isEmpty) {
       loadFile();
-      print(allAhadeth[0].hadethName);
     }
-    return ListView.separated(
-        itemBuilder: (context, index) {
-          return InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, "");
-            },
-            child: Text(
-              allAhadeth[index].hadethName,
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Theme.of(context).primaryColor),
-            ),
-          );
-        },
-        separatorBuilder: (context, index) => Divider(
-              height: 1,
-              color: Theme.of(context).primaryColor,
-            ),
-        itemCount: allAhadeth.length);
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Image.asset("assets/images/ahadeth_pic.png"),
+          Divider(
+            thickness: 3,
+            color: Theme.of(context).primaryColor,
+          ),
+          Text(
+            "الأحاديث",
+            style: GoogleFonts.amiri(color: Theme.of(context).primaryColor),
+          ),
+          Divider(
+            thickness: 3,
+            color: Theme.of(context).primaryColor,
+          ),
+          ListView.separated(
+            shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, "");
+                  },
+                  child: Text(
+                    allAhadeth[index].hadethName,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.amiri(color: Theme.of(context).primaryColor),
+                  ),
+                );
+              },
+              separatorBuilder: (context, index) => Divider(
+                    height: 1,
+                    color: Theme.of(context).primaryColor,
+                  ),
+              itemCount: allAhadeth.length),
+        ],
+      ),
+    );
   }
 
   void loadFile() {
@@ -52,12 +73,10 @@ class _AhadethTabState extends State<AhadethTab> {
         // print(content);
 
         AhadethModel ahadethModel = AhadethModel(title, content);
-        print(ahadethModel.hadethName);
         allAhadeth.add(ahadethModel);
       }
       setState(() {});
     }).catchError((error) {
-      print(error);
     });
   }
 }
