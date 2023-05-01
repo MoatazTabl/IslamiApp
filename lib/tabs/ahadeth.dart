@@ -26,7 +26,7 @@ class _AhadethTabState extends State<AhadethTab> {
           ),
           Text(
             "الأحاديث",
-            style: GoogleFonts.amiri(color: Theme.of(context).primaryColor),
+            style: Theme.of(context).textTheme.bodyMedium
           ),
           Divider(
             thickness: 3,
@@ -43,7 +43,7 @@ class _AhadethTabState extends State<AhadethTab> {
                   child: Text(
                     allAhadeth[index].hadethName,
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.amiri(color: Theme.of(context).primaryColor),
+                    style:Theme.of(context).textTheme.bodySmall,
                   ),
                 );
               },

@@ -20,13 +20,8 @@ class _QuranScreenState extends State<QuranScreen> {
     return SafeArea(
       child: Stack(
         children: [
-          SizedBox(
-            width: double.infinity,
-            child: Image.asset(
-              "assets/images/main_bg.png",
-              fit: BoxFit.fill,
-            ),
-          ),
+          Image.asset(Brightness.dark==Theme.of(context).brightness?
+          "assets/images/dark_bg.png":"assets/images/main_bg.png",fit: BoxFit.fill,height: double.infinity,width: double.infinity,),
           Scaffold(
             appBar: AppBar(
               title: const Text(
