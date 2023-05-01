@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: MyThemeData.lightTheme,
+      darkTheme: MyThemeData.darkTheme,
       initialRoute: QuranScreen.routeName,
       routes: {
         QuranScreen.routeName:(context)=>QuranScreen(),

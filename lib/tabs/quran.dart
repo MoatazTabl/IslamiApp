@@ -173,8 +173,7 @@ class QuranTab extends StatelessWidget {
                   arSuras[index],
                   style: Theme.of(context)
                       .textTheme
-                      .bodySmall!
-                      .copyWith(color: Colors.black),
+                      .bodySmall,
                 ),
               ),
             ),
