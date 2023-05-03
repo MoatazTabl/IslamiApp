@@ -46,6 +46,8 @@ class MyThemeData {
   );
 
   static ThemeData darkTheme = ThemeData(
+    // colorScheme: ColorScheme(brightness: Brightness.dark, primary: darkColor, onPrimary: onPrimary, secondary: secondary, onSecondary: onSecondary, error: error, onError: onError, background: background, onBackground: onBackground, surface: surface, onSurface: onSurface),
+
     brightness: Brightness.dark,
     scaffoldBackgroundColor: Colors.transparent,
     primaryColor: darkColor,

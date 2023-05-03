@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami/my_themes.dart';
 import 'package:islami/suraDeatils.dart';
 
 class SuraScreen extends StatefulWidget {
@@ -66,7 +67,7 @@ class _SuraScreenState extends State<SuraScreen> {
                             TextSpan(
                                 text: '\u06dd${index + 1}',
                                 style: GoogleFonts.amiri(
-                                    color: Theme.of(context).primaryColor,
+                                    color: Brightness.light==Theme.of(context).brightness?Theme.of(context).primaryColor:MyThemeData.yellowColor,
                                     fontSize: 25))
                           ],
                         ),

@@ -3,6 +3,7 @@ import 'package:islami/tabs/ahadeth.dart';
 import 'package:islami/tabs/quran.dart';
 import 'package:islami/tabs/radio.dart';
 import 'package:islami/tabs/sebha.dart';
+import 'package:islami/tabs/settings_tab.dart';
 
 class QuranScreen extends StatefulWidget {
   static const String routeName = "QuranScreen";
@@ -13,7 +14,7 @@ class QuranScreen extends StatefulWidget {
 
 class _QuranScreenState extends State<QuranScreen> {
   int index = 0;
-  List<Widget>tabs=[QuranTab(),SebhaTab(),AhadethTab(),RadioTab()];
+  List<Widget>tabs=[QuranTab(),SebhaTab(),AhadethTab(),RadioTab(),SettingsTab()];
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +50,9 @@ class _QuranScreenState extends State<QuranScreen> {
                 BottomNavigationBarItem(
                     icon: ImageIcon(AssetImage("assets/images/radio.png")),
                     label: "Radio"),
+              BottomNavigationBarItem(
+                    icon: Icon(Icons.settings),
+                    label: "Settings"),
               ],
             ),
           ),
