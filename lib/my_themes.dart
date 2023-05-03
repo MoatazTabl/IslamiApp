@@ -18,13 +18,11 @@ class MyThemeData {
       centerTitle: true,
       iconTheme: IconThemeData(color: lightColor),
     ),
-
-
     textTheme: TextTheme(
         bodyMedium: GoogleFonts.elMessiri(
             fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black),
-        bodySmall: GoogleFonts.elMessiri(fontSize: 20,fontWeight: FontWeight.bold,color: lightColor)),
-
+        bodySmall: GoogleFonts.elMessiri(
+            fontSize: 20, fontWeight: FontWeight.bold, color: lightColor)),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: lightColor,
         type: BottomNavigationBarType.fixed,
@@ -32,25 +30,18 @@ class MyThemeData {
         selectedLabelStyle: TextStyle(color: Colors.black),
         unselectedItemColor: Colors.white,
         unselectedLabelStyle: TextStyle(color: Colors.white)),
-
-
     buttonTheme:
         ButtonThemeData(buttonColor: lightColor, highlightColor: lightColor),
     elevatedButtonTheme: ElevatedButtonThemeData(
-
       style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(lightColor),
-
-
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-
           fixedSize: MaterialStatePropertyAll(Size(10, 20)),
           padding: MaterialStateProperty.all(EdgeInsets.zero)),
-
     ),
   );
 
@@ -58,7 +49,6 @@ class MyThemeData {
     brightness: Brightness.dark,
     scaffoldBackgroundColor: Colors.transparent,
     primaryColor: darkColor,
-
     appBarTheme: const AppBarTheme(
       titleTextStyle: TextStyle(
           fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
@@ -67,16 +57,13 @@ class MyThemeData {
       centerTitle: true,
       iconTheme: IconThemeData(color: darkColor),
     ),
-
-
     textTheme: TextTheme(
         bodyMedium: GoogleFonts.amiri(
             fontSize: 25, fontWeight: FontWeight.bold, color: yellowColor),
-        bodySmall: GoogleFonts.amiri(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),
-      titleMedium: GoogleFonts.amiri(fontSize: 25,fontWeight: FontWeight.w400,color:Colors.white)
-    ),
-
-
+        bodySmall: GoogleFonts.amiri(
+            fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+        titleMedium: GoogleFonts.amiri(
+            fontSize: 35, fontWeight: FontWeight.bold, color: Colors.white)),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: darkColor,
         type: BottomNavigationBarType.fixed,
@@ -84,25 +71,18 @@ class MyThemeData {
         selectedLabelStyle: TextStyle(color: yellowColor),
         unselectedItemColor: Colors.white,
         unselectedLabelStyle: TextStyle(color: Colors.white)),
-
-
     buttonTheme:
-    ButtonThemeData(buttonColor: darkColor, highlightColor: darkColor),
+        ButtonThemeData(buttonColor: darkColor, highlightColor: darkColor),
     elevatedButtonTheme: ElevatedButtonThemeData(
-
       style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(darkColor),
-
-
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-
           fixedSize: MaterialStatePropertyAll(Size(10, 20)),
           padding: MaterialStateProperty.all(EdgeInsets.zero)),
-
     ),
   );
 }

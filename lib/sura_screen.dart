@@ -39,8 +39,9 @@ class _SuraScreenState extends State<SuraScreen> {
               args.suraName,
               style: Theme.of(context)
                   .textTheme
-                  .titleMedium,
+                  .titleMedium!.copyWith(fontSize: 35),
             ),
+            centerTitle: true,
           ),
           body: verses.isEmpty
               ? Center(
@@ -49,22 +50,26 @@ class _SuraScreenState extends State<SuraScreen> {
                 ))
               : ListView.builder(
                   itemBuilder: (context, index) {
-                    return RichText(
-                      textDirection: TextDirection.rtl,
-                      textAlign: verses.length <= 20
-                          ? TextAlign.center
-                          : TextAlign.justify,
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                              text: verses[index],
-                              style: Theme.of(context).textTheme.bodyMedium),
-                          TextSpan(
-                              text: '\u06dd${index + 1}',
-                              style: GoogleFonts.amiri(
-                                  color: Theme.of(context).primaryColor,
-                                  fontSize: 25))
-                        ],
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0,),
+                      child: RichText(
+
+                        textDirection: TextDirection.rtl,
+                        textAlign: verses.length <= 20
+                            ? TextAlign.center
+                            : TextAlign.justify,
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                                text: verses[index],
+                                style: Theme.of(context).textTheme.bodyMedium),
+                            TextSpan(
+                                text: '\u06dd${index + 1}',
+                                style: GoogleFonts.amiri(
+                                    color: Theme.of(context).primaryColor,
+                                    fontSize: 25))
+                          ],
+                        ),
                       ),
                     );
                   },

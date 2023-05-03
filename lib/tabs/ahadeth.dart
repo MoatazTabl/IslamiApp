@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/ahadethModel.dart';
 import 'package:islami/ahadeth_screen.dart';
+import 'package:islami/my_themes.dart';
 
 class AhadethTab extends StatefulWidget {
   @override
@@ -22,7 +23,7 @@ class _AhadethTabState extends State<AhadethTab> {
           Image.asset("assets/images/ahadeth_pic.png"),
           Divider(
             thickness: 3,
-            color: Theme.of(context).primaryColor,
+            color: Brightness.light==Theme.of(context).brightness?Theme.of(context).primaryColor:MyThemeData.yellowColor,
           ),
           Text(
             "الأحاديث",
@@ -30,7 +31,7 @@ class _AhadethTabState extends State<AhadethTab> {
           ),
           Divider(
             thickness: 3,
-            color: Theme.of(context).primaryColor,
+            color: Brightness.light==Theme.of(context).brightness?Theme.of(context).primaryColor:MyThemeData.yellowColor,
           ),
           ListView.separated(
             shrinkWrap: true,
@@ -38,7 +39,7 @@ class _AhadethTabState extends State<AhadethTab> {
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, AhadethScreen.routeName);
+                    Navigator.pushNamed(context, AhadethScreen.routeName,arguments: allAhadeth[index]);
                   },
                   child: Text(
                     allAhadeth[index].hadethName,
