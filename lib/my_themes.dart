@@ -70,9 +70,12 @@ class MyThemeData {
 
 
     textTheme: TextTheme(
-        bodyMedium: GoogleFonts.elMessiri(
+        bodyMedium: GoogleFonts.amiri(
             fontSize: 25, fontWeight: FontWeight.bold, color: yellowColor),
-        bodySmall: GoogleFonts.elMessiri(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white)),
+        bodySmall: GoogleFonts.amiri(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),
+      titleMedium: GoogleFonts.amiri(fontSize: 25,fontWeight: FontWeight.w400,color:Colors.white)
+    ),
+
 
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: darkColor,

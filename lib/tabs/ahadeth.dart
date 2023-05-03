@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/ahadethModel.dart';
+import 'package:islami/ahadeth_screen.dart';
 
 class AhadethTab extends StatefulWidget {
   @override
@@ -38,7 +38,7 @@ class _AhadethTabState extends State<AhadethTab> {
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, "");
+                    Navigator.pushNamed(context, AhadethScreen.routeName);
                   },
                   child: Text(
                     allAhadeth[index].hadethName,

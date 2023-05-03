@@ -26,9 +26,12 @@ class _SuraScreenState extends State<SuraScreen> {
 
     return SafeArea(
       child: Container(
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/main_bg.png"), fit: BoxFit.fill),
+              image: AssetImage(Brightness.light == Theme.of(context).brightness
+                  ? "assets/images/main_bg.png"
+                  : "assets/images/dark_bg.png"),
+              fit: BoxFit.fill),
         ),
         child: Scaffold(
           appBar: AppBar(
@@ -36,8 +39,7 @@ class _SuraScreenState extends State<SuraScreen> {
               args.suraName,
               style: Theme.of(context)
                   .textTheme
-                  .bodyMedium!
-                  .copyWith(fontWeight: FontWeight.bold),
+                  .titleMedium,
             ),
           ),
           body: verses.isEmpty
@@ -56,7 +58,7 @@ class _SuraScreenState extends State<SuraScreen> {
                         children: [
                           TextSpan(
                               text: verses[index],
-                              style: Theme.of(context).textTheme.bodySmall),
+                              style: Theme.of(context).textTheme.bodyMedium),
                           TextSpan(
                               text: '\u06dd${index + 1}',
                               style: GoogleFonts.amiri(

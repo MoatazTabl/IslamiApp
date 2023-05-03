@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami/ahadeth_screen.dart';
 import 'package:islami/my_themes.dart';
 import 'package:islami/quran_screen.dart';
 import 'package:islami/sura_screen.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         QuranScreen.routeName:(context)=>QuranScreen(),
         SuraScreen.routeName:(c)=>SuraScreen(),
+        AhadethScreen.routeName:(c)=>AhadethScreen(),
       },
     );
   }
