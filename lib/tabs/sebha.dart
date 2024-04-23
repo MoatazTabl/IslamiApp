@@ -28,7 +28,7 @@ class _SebhaTabState extends State<SebhaTab> {
               "assets/images/Sebha_pic.png",
             ),
           ),
-          const Text("عدد التسبيحات"),
+          Text("عدد التسبيحات",style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.white),),
           ElevatedButton(
             onPressed: () {
               counter++;
