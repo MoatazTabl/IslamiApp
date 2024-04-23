@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:islami/tabs/ahadeth.dart';
 import 'package:islami/tabs/quran.dart';
-import 'package:islami/tabs/radio.dart';
 import 'package:islami/tabs/sebha.dart';
 import 'package:islami/tabs/settings_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranScreen extends StatefulWidget {
   static const String routeName = "QuranScreen";
@@ -14,7 +14,7 @@ class QuranScreen extends StatefulWidget {
 
 class _QuranScreenState extends State<QuranScreen> {
   int index = 0;
-  List<Widget>tabs=[QuranTab(),SebhaTab(),AhadethTab(),RadioTab(),SettingsTab()];
+  List<Widget>tabs=[QuranTab(),SebhaTab(),AhadethTab(),SettingsTab()];
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +25,8 @@ class _QuranScreenState extends State<QuranScreen> {
           "assets/images/dark_bg.png":"assets/images/main_bg.png",fit: BoxFit.fill,height: double.infinity,width: double.infinity,),
           Scaffold(
             appBar: AppBar(
-              title: const Text(
-                "Islami",
+              title:  Text(
+                AppLocalizations.of(context)!.appTitle,
               ),
 
             ),
@@ -37,22 +37,19 @@ class _QuranScreenState extends State<QuranScreen> {
                 index = value;
                 setState(() {});
               },
-              items: const [
+              items:  [
                 BottomNavigationBarItem(
-                    icon: ImageIcon(AssetImage("assets/images/moshaf.png")),
-                    label: "Quran"),
+                    icon: const ImageIcon(AssetImage("assets/images/moshaf.png")),
+                    label: AppLocalizations.of(context)!.quran),
                 BottomNavigationBarItem(
-                    icon: ImageIcon(AssetImage("assets/images/sebha.png")),
-                    label: "Sebha"),
+                    icon: const ImageIcon(AssetImage("assets/images/sebha.png")),
+                    label: AppLocalizations.of(context)!.sebha),
                 BottomNavigationBarItem(
-                    icon: ImageIcon(AssetImage("assets/images/ahadeth.png")),
-                    label: "Ahadeth"),
+                    icon: const ImageIcon(AssetImage("assets/images/ahadeth.png")),
+                    label: AppLocalizations.of(context)!.ahadeth),
                 BottomNavigationBarItem(
-                    icon: ImageIcon(AssetImage("assets/images/radio.png")),
-                    label: "Radio"),
-              BottomNavigationBarItem(
-                    icon: Icon(Icons.settings),
-                    label: "Settings"),
+                    icon: const Icon(Icons.settings),
+                    label: AppLocalizations.of(context)!.settings),
               ],
             ),
           ),

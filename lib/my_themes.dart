@@ -19,9 +19,9 @@ class MyThemeData {
       iconTheme: IconThemeData(color: lightColor),
     ),
     textTheme: TextTheme(
-        bodyMedium: GoogleFonts.elMessiri(
+        bodyMedium: GoogleFonts.amiri(
             fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black),
-        bodySmall: GoogleFonts.elMessiri(
+        bodySmall: GoogleFonts.amiri(
             fontSize: 20, fontWeight: FontWeight.bold, color: lightColor)),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: lightColor,
